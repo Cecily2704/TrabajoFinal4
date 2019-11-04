@@ -23,7 +23,7 @@ madera = [[madera_viga]]
 
 listaP = [[Cportland], [arena_fina], [piedra], [acero], [madera]]
 
-precio = []
+pres = []
 while True:
     cantidad = int(input("¿Cuántos productos va utilizar?"))
     if 0 < cantidad < 6:
@@ -31,14 +31,22 @@ while True:
 
 for i in range(cantidad):
     num = str (i + 1)
-    print ("Cemento: 1", "Arena:2", "Piedra:3", "Acero:4","Madera:5")
+    print ("Cemento: 1", "Arena: 2", "Piedra: 3", "Acero: 4","Madera: 5")
     nombre = int(input("Ingrese el número correspondiente al producto" + num + ":"))
     metrado = input("Ingrese el metrado del producto " + num + ":")
     pos = 1 - nombre
-    print("Escoja la opción del producto:")
+    #print("Escoja la opción del producto:")
+    #Opción cemento
     if listaP[pos] == listaP[0]:
         print("Cemento Portland tipo I: 1","Cemento Portland tipo II: 2","Cemento Portland tipo V: 3",
         "Cemento Portland tipo IP: 4","Cemento Portland tipo HS: 5","Cemento Portland tipo GU: 6")
+        c =  int(input("Ingrese la opción deseada:"))
+        pos1 = 1 - c
+        if Cportland[pos1] == Cportland[0]:
+            print("Quisqueya = s/ 21.50","Sol = s/ 22.20","Pacasmayo = s/ 24.00")
+            ce = int(input("Escoja la opción que desea:","Quisqueya: 1", "Sol: 2","Pacasmayo: 3"))
+            ce1 = 1 - ce
+            pres.append(I[ce1])
 
 
     
