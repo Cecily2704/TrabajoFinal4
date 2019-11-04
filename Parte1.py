@@ -2,7 +2,6 @@ import os
 os.system("cls")
 
 #Cportland = [[I],[II],[V], [IP], [HS], [GU]]
-#listaP = [[Cportland], arena, piedra, [acero], madera]
 #I = ["quisqueya = s/ 21.50","sol = s/ 22.20","pacasmayo = s/ 24.00"]
 #II = ["Andino = s/ 24.00"]
 #V = ["Pacasmayo = s/ 31.90"]
@@ -10,15 +9,19 @@ os.system("cls")
 #HS = ["Inka = s/ 22.80", "Andino = s/ 24.20"]
 #GU = ["APU = s/ 20.50", "Pacasmayo = s/ 23.10"]
 
+#arena fina = ["arena (Unicon) = s/ 0.16xkg], "arena Hades = s/ 1.43xkg]
+
+#piedra =["piedra chancada = s/ 0.15 solesxkg]
+
 #acero = [[barra_corrugada_1/2], [barra_corrugada_3/8],[barra_corrugada_8mm]]
 #barra_corrugada_1/2 = ["Aceros Arequipa = s/ 27.70", SiderPeru = s/ 27.00]
 #barra_corrugada_3/8 = ["Aceros Arequipa = s/ 15.50", "SiderPeru = s/ 15.50"]
 #barra_corrugada_8mm = ["Aceros Arequipa = s/ 11.20", SiderPeru = s/ 11.20]
 
-#madera = 
-#piedra =[piedra chancada = 0.15 soles el kg]
-#arena fina = [arena (Unicon) = 0.16 soles el kg, arena (Hades) = 1.43 soles el kg]
+#madera = [[madera_viga]]
+#madera_viga = [["Maestro_2x3x16 = s/ 46.90"], ["Sodimac_2x4x16 = s/ 57.90"]]
 
+#listaP = [[Cportland], arena, piedra, [acero], [madera]]
 
 precio = []
 while True:
