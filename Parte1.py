@@ -4,6 +4,9 @@ os.system("cls")
 #Cportland = [I,II,V, IP, HS]
 #listaP = [[Cportland], arena, piedra, acero, madera]
 
+#piedra =[piedra chancada = 0.15 soles el kg]
+#arena fina = [arena (Unicon) = 0.16 soles el kg, arena (Hades) = 1.43 soles el kg]
+
 
 precio = []
 while True:
