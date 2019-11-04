@@ -42,5 +42,32 @@ for i in range(cantidad):
 
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    #Opcion acero
+    elif listaP[pos] == listaP[3]:
+        print("Barra Corrugada 1/2: 1", "Barra Corrugada 3/8: 2", "Barra Corrugada 8mm: 3")
+        ac = int(input("Ingrese la opcion deseada"))
+        pos4 = 1 - ac
+        if acero[pos4] == acero[0]:
+            print (acero)
+            ace = int(input("Escoja la opción que desea:", ""))
+
 
 
