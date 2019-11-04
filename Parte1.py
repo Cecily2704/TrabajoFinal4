@@ -1,9 +1,21 @@
 import os
 os.system("cls")
 
-#Cportland = [I,II,V, IP, HS]
-#listaP = [[Cportland], arena, piedra, acero, madera]
+#Cportland = [[I],[II],[V], [IP], [HS], [GU]]
+#listaP = [[Cportland], arena, piedra, [acero], madera]
+#I = ["quisqueya = s/ 21.50","sol = s/ 22.20","pacasmayo = s/ 24.00"]
+#II = ["Andino = s/ 24.00"]
+#V = ["Pacasmayo = s/ 31.90"]
+#IP = ["Quisqueya = s/ 20.00", "Yura = s/ 20.60", "Andino = s/ 23.20"]
+#HS = ["Inka = s/ 22.80", "Andino = s/ 24.20"]
+#GU = ["APU = s/ 20.50", "Pacasmayo = s/ 23.10"]
 
+#acero = [[barra_corrugada_1/2], [barra_corrugada_3/8],[barra_corrugada_8mm]]
+#barra_corrugada_1/2 = ["Aceros Arequipa = s/ 27.70", SiderPeru = s/ 27.00]
+#barra_corrugada_3/8 = ["Aceros Arequipa = s/ 15.50", "SiderPeru = s/ 15.50"]
+#barra_corrugada_8mm = ["Aceros Arequipa = s/ 11.20", SiderPeru = s/ 11.20]
+
+#madera = 
 
 precio = []
 while True:
