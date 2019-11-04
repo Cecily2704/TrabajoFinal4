@@ -1,8 +1,8 @@
 import os
 os.system("cls")
 
-Cportland = [I,II,V, IP, HS]
-listaP = [[Cportland], arena, piedra, acero, madera]
+#Cportland = [I,II,V, IP, HS]
+#listaP = [[Cportland], arena, piedra, acero, madera]
 
 
 precio = []
@@ -13,10 +13,10 @@ while True:
 
 for i in range(cantidad):
     num = str (i + 1)
-    print("Escoja una opcion")
-    print ("Cemento: 1")
-    nombre = input("Ingrese el nombre del producto " + num + ":")
+    print ("Cemento: 1", "Arena:2", "Piedra:3", "Acero:4","Madera:5")
+    nombre = int(input("Ingrese el número correspondiente al producto" + num + ":"))
     metrado = input("Ingrese el metrado del producto " + num + ":")
+    pos = 1 - nombre
 
 
     
