@@ -35,9 +35,12 @@ for i in range(cantidad):
     nombre = int(input("Ingrese el número correspondiente al producto" + num + ":"))
     metrado = input("Ingrese el metrado del producto " + num + ":")
     pos = 1 - nombre
-    print(listaP[pos], "Escoja la opción del producto:")
+    print("Escoja la opción del producto:")
     if listaP[pos] == listaP[0]:
         print("Cemento Portland tipo I: 1","Cemento Portland tipo II: 2","Cemento Portland tipo V: 3",
         "Cemento Portland tipo IP: 4","Cemento Portland tipo HS: 5","Cemento Portland tipo GU: 6")
+
+
+    
 
 
