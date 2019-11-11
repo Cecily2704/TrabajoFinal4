@@ -49,61 +49,63 @@ for i in range(cantidad):
     num = str (i + 1)
     for pro in productos:
         print("Opción",pro)
-    nombre = int(input("Ingrese el número correspondiente al producto " + num + ":"))
+    nombre = int(input("Ingrese el número correspondiente al producto " + num + ": "))
     pos = nombre - 1 
 
 #Proceso
     #Opción cemento
     if listaP[pos] == listaP[0]:
-        cantidad_producto1 = int(input("Ingrese la cantidad de bolsas de cemento deseadas para el producto " + num + ":"))
+        cantidad_producto1 = int(input("Ingrese la cantidad de bolsas de cemento deseadas para el producto " + num + ": "))
         for tip in tiposc:
             print("Opción",tip)
-        c =  int(input("Ingrese la opción de cemento que desea:"))
+        c =  int(input("Ingrese la opción de cemento que desea: "))
         pos1 = c - 1
         if Cportland[pos1] == Cportland[0]:
             for cem in I:
                 print(cem)
-            ce = int(input("Escoja la opción que desea:"))
+            ce = int(input("Escoja la opción que desea: "))
             ce1 = ce - 1
             pres.append(I[ce1])
             presuce = cantidad_producto1*I1[ce1]
-            print("El presupuesto de cemento sería",presuce, "soles")
+            print("El presupuesto de cemento sería ",presuce, "soles.")
         elif Cportland[pos1] == Cportland[1]:
             for cem in II:
                 print(cem)
             pres.append(II[0])
             presuce = cantidad_producto1*II1
-            print("El presupuesto de cemento sería",presuce, "soles")   
+            print("El presupuesto de cemento sería ",presuce, "soles.")   
         elif Cportland[pos1] == Cportland[2]:
             for cem in V:
                 print(cem)
             pres.append(V[0])
             presuce = cantidad_producto1*V1
-            print("El presupuesto de cemento sería", presuce, "soles") 
+            print("El presupuesto de cemento sería ", presuce, "soles.") 
         elif Cportland[pos1] == Cportland[3]:
             for cem in IP:
                 print(cem)
-            cem = int(input("Escoja la opción que desea:"))
+            cem = int(input("Escoja la opción que desea: "))
             cem1 = cem - 1
             pres.append(IP[cem1])
             presuce = cantidad_producto1*IP1[cem1]
-            print("El presupuesto de cemento sería", presuce, "soles") 
+            print("El presupuesto de cemento sería ", presuce, "soles.") 
         elif Cportland[pos1] == Cportland[4]:
             for cem in HS:
                 print(cem)
-            ceme = int(input("Escoja la opción que desea:"))
+            ceme = int(input("Escoja la opción que desea: "))
             ceme1 = ceme - 1
             pres.append(HS[ceme1])
             presuce = cantidad_producto1*HS1[ceme1]
-            print("El presupuesto de cemento sería", presuce, "soles") 
+            print("El presupuesto de cemento sería ", presuce, "soles.") 
         else:
             for cem in GU:
                 print(cem)
-            ce_me = int(input("Escoja la opción que desea:"))
+            ce_me = int(input("Escoja la opción que desea: "))
             ce_me1 = ce_me - 1
             pres.append(GU[ce_me1])
             presuce = cantidad_producto1*GU1[ce_me1]
-            print("El presupuesto de cemento sería", presuce, "soles") 
+            print("El presupuesto de cemento sería ", presuce, "soles.") 
+    else:
+        presuce = 0
 
 
     # Opcion arena fina:
@@ -115,7 +117,9 @@ for i in range(cantidad):
         arefin1 = arefin - 1
         pres.append(arena_fina[arefin1])
         presuare = cantidad_producto2 * arena_fina_A[arefin1]
-        print(presuare)
+        print("El presupuesto de la arena fina sería ", presuare, "soles.")
+    else:
+        presuare = 0
        
     
     # Opcion piedra
@@ -125,50 +129,59 @@ for i in range(cantidad):
             print(piedras)
         pres.append(piedra[0])
         presupiedra = cantidad_producto3 * piedra1
-        print (presupiedra)
+        print("El presupuesto de la piedra chancada sería ", presupiedra, "soles.")
+    else:
+        presupiedra = 0
 
     
     #Opcion acero
     if listaP[pos] == listaP[3]:
-        cantidad_producto4 = int(input("Ingrese la cantidad de barras de 9m de acero deseadas para el producto " + num + ":"))
+        cantidad_producto4 = int(input("Ingrese la cantidad de barras de 9m de acero deseadas para el producto " + num + ": "))
         for tip in tiposac:
             print ("Opción", tip)       
-        ac = int(input("Ingrese la opción de acero deseada:"))
+        ac = int(input("Ingrese la opción de acero deseada: "))
         pos4 = 1 - ac
         if acero[pos4] == acero[0]:
             for ace in barra_corrugada_1_2: 
                 print (ace)
-            acer = int(input("Escoja la opción que desea:" ))
+            acer = int(input("Escoja la opción que desea: " ))
             acer1 = acer - 1
             pres.append(barra_corrugada_1_2[acer1])
             presu_acer = cantidad_producto4*barra_corrugada_1_2_A[acer1]
-            print ("El presupuesto de acero sería", presu_acer, "soles")
+            print ("El presupuesto de acero sería", presu_acer, "soles.")
         elif acero[pos4] == acero [1]:
             for ace in barra_corrugada_3_8:
                 print (ace)
-            ac_er = int(input("Escoja la opción que desea:" ))
+            ac_er = int(input("Escoja la opción que desea: " ))
             ac_er1 = ac_er - 1
             pres.append(barra_corrugada_8mm[ac_er1])
             presu_acer = cantidad_producto4*barra_corrugada_3_8_B[ac_er1]
-            print ("El presupuesto de acero sería", presu_acer, "soles")
+            print ("El presupuesto de acero sería", presu_acer, "soles.")
         else:
             for ace in barra_corrugada_8mm:
                 print (ace)
-            ace_ro = int(input("Escoja la opción que desea:" ))
+            ace_ro = int(input("Escoja la opción que desea: "))
             ace_ro1 = ace_ro - 1
             pres.append(barra_corrugada_8mm[ace_ro1])
             presu_acer = cantidad_producto4*barra_corrugada_8mm_C[ace_ro1]
-            print ("El presupuesto de acero sería", presu_acer, "soles")
-
+            print ("El presupuesto de acero sería", presu_acer, "soles.")
+    else:
+        presu_acer = 0
 
     #Opción madera
     if listaP[pos] == listaP[4]:
-        cantidad_producto5: int(input(""))
+        cantidad_producto5 = int(input("Ingrese la cantidad de tablas de 16ft: "))
         for viga in madera:
             print(viga)
-        ma = int(input("Escoja la opción que desea:"))
+        ma = int(input("Escoja la opción que desea: "))
         ma1 = ma - 1
         pres.append(madera[ma1])
-        presuma = cantidad_producto5*madera[ma1]
-        print("El presupuesto de madera sería", presuma, "soles")
-
+        presuma = cantidad_producto5 * madera1[ma1]
+        print("El presupuesto de madera sería", presuma, "soles.")
+    else:
+        presuma = 0
+# Salida
+presupuesto_final = 0
+presupuesto_final = presuce + presu_acer + presuare + presupiedra + presuma
+print("Usted escogió estas opciones ", pres)
+print("El presupuesto final sería ", round(presupuesto_final,2), "soles.")
