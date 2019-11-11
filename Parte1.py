@@ -11,14 +11,20 @@ Cportland = [[I], [II], [V], [IP], [HS], [GU]]
 tiposc = ["Cemento Portland tipo I: 1","Cemento Portland tipo II: 2","Cemento Portland tipo V: 3",
         "Cemento Portland tipo IP: 4","Cemento Portland tipo HS: 5","Cemento Portland tipo GU: 6"]
 
+arena_fina_A = [0.16, 1.43]
 arena_fina = ["arena (Unicon) = s/ 0.16xkg", "arena Hades = s/ 1.43xkg"]
 
+piedra1 = 0.15
 piedra =["piedra chancada = s/ 0.15 solesxkg"]
 
+barra_corrugada_1_2_A = [27.70, 27.00]
+barra_corrugada_3_8_B = [15.50, 15.50]
+barra_corrugada_8mm_C = [11.20, 11.20]
 barra_corrugada_1_2 = ["Aceros Arequipa = s/ 27.70", "SiderPeru = s/ 27.00"]
 barra_corrugada_3_8 = ["Aceros Arequipa = s/ 15.50", "SiderPeru = s/ 15.50"]
 barra_corrugada_8mm = ["Aceros Arequipa = s/ 11.20", "SiderPeru = s/ 11.20"]
 acero = [[barra_corrugada_1_2], [barra_corrugada_3_8],[barra_corrugada_8mm]]
+tiposac = ["Barra corrugada 1/2 (0.994 kg/m): 1", "Barra corrugada 3/8 (0.560 kg/m): 2", "Barra Corrugada 8mm (0.395 kg/m): 3"]
 
 madera = ["Maestro_2x3x16 = s/ 46.90", "Sodimac_2x4x16 = s/ 57.90"]
 
@@ -34,10 +40,10 @@ while True:
 
 for i in range(cantidad):
     num = str (i + 1)
-    print ("Cemento: 1", "Arena: 2", "Piedra: 3", "Acero: 4","Madera: 5")
-    nombre = int(input("Ingrese el número correspondiente al producto" + num + ":"))
-    metrado = input("Ingrese el metrado del producto " + num + ":")
-    pos = 1 - nombre
+    for pro in productos:
+        print("Opción",pro)
+    nombre = int(input("Ingrese el número correspondiente al producto " + num + ":"))
+    pos = nombre - 1 
 
 #Proceso
     #Opción cemento
@@ -80,7 +86,6 @@ for i in range(cantidad):
             pres.append(GU[ce_me1])
 
 
-
     # Opcion arena fina:
     if listaP[pos] == listaP[1]:
         cantidad_producto2 = int(input("Inrgese la cantidad de kg que necesita: "))
@@ -89,7 +94,8 @@ for i in range(cantidad):
            arefin = int(input("ingrese la opcion deseada: ")) 
            arefin1 = arefin - 1
            pres.append(arena_fina[arefin1])
-           presuare = cantidad_producto2 * arena_fina[arefin1]
+           presuare = cantidad_producto2 * arena_fina_A[arefin1]
+           print(presuare)
        
     
     # Opcion piedra
@@ -97,8 +103,41 @@ for i in range(cantidad):
         cantidad_producto3 = int(input("Ingrese la cantidad de kg que necesita: "))
         for piedras in piedra:
             print(piedras)
-            piedrachan = int(input("Ingrese la opcion deseada: "))
-            piedra1 =piedra1 - 1
-            pres.append(piedra[piedra1])
-            presupiedra = cantidad_producto3 * piedra[piedra1]
+            pres.append(piedra[0])
+            presupiedra = cantidad_producto3 * piedra1
+            print (presupiedra)
+
+    
+    #Opcion acero
+    if listaP[pos] == listaP[3]:
+        cantidad_producto4 = int(input("Ingrese la cantidad de barras de 9m de acero deseadas para el producto " + num + ":"))
+        for tip in tiposac:
+            print ("Opción", tip)       
+        ac = int(input("Ingrese la opción de acero deseada:"))
+        pos4 = 1 - ac
+        if acero[pos4] == acero[0]:
+            for ace in barra_corrugada_1_2: 
+                print (ace)
+            acer = int(input("Escoja la opción que desea:" ))
+            acer1 = acer - 1
+            pres.append(barra_corrugada_1_2[acer1])
+            presu_acer = cantidad_producto4*barra_corrugada_1_2_A[acer1]
+            print (presu_acer)
+        elif acero[pos4] == acero [1]:
+            for ace in barra_corrugada_3_8:
+                print (ace)
+            ac_er = int(input("Escoja la opción que desea:" ))
+            ac_er1 = ac_er - 1
+            pres.append(barra_corrugada_8mm[ac_er1])
+            presu_acer = cantidad_producto4*barra_corrugada_3_8_B[ac_er1]
+            print (presu_acer)
+        else:
+            for ace in barra_corrugada_8mm:
+                print (ace)
+            ace_ro = int(input("Escoja la opción que desea:" ))
+            ace_ro1 = ace_ro - 1
+            pres.append(barra_corrugada_8mm[ace_ro1])
+            presu_acer = cantidad_producto4*barra_corrugada_8mm_C[ace_ro1]
+            print (presu_acer)
+
 
