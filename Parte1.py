@@ -31,13 +31,8 @@ while True:
 
 for i in range(cantidad):
     num = str (i + 1)
-<<<<<<< HEAD
-    print ("Cemento: 1", "Arena:2", "Piedra:3", "Acero:4","Madera:5")
-    nombre = int(input("Ingrese el número correspondiente al producto " + num + ":"))
-=======
     print ("Cemento: 1", "Arena: 2", "Piedra: 3", "Acero: 4","Madera: 5")
     nombre = int(input("Ingrese el número correspondiente al producto" + num + ":"))
->>>>>>> 29ac79a361e12c7fa2efd8d14d4a92479fbdf112
     metrado = input("Ingrese el metrado del producto " + num + ":")
     pos = 1 - nombre
     #print("Escoja la opción del producto:")
@@ -56,12 +51,6 @@ for i in range(cantidad):
 
 
 
-
-    
-    
-    
-    
-    
     # opcion arena fina:
     if listaP[pos] == listaP[1]:
             print("Arena fina marca Unicon: 1", "Arena fina marca Hades: 2")
