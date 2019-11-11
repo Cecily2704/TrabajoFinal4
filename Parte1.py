@@ -81,11 +81,24 @@ for i in range(cantidad):
 
 
 
-    # opcion arena fina:
+    # Opcion arena fina:
     if listaP[pos] == listaP[1]:
-            print("Arena fina marca Unicon: 1", "Arena fina marca Hades: 2")
-            arefin = int(input("inrgese la opciondeseada: "))
-            pos2 = 1 - arefin
-            if arena_fina[pos2] == arena_fina[0]:
-                print(arena_fina)
+        cantidad_producto2 = int(input("Inrgese la cantidad de kg que necesita: "))
+        for arena in arena_fina:
+           print(arena)
+           arefin = int(input("ingrese la opcion deseada: ")) 
+           arefin1 = arefin - 1
+           pres.append(arena_fina[arefin1])
+           presuare = cantidad_producto2 * arena_fina[arefin1]
+       
+    
+    # Opcion piedra
+    if listaP[pos] == listaP[2]:
+        cantidad_producto3 = int(input("Ingrese la cantidad de kg que necesita: "))
+        for piedras in piedra:
+            print(piedras)
+            piedrachan = int(input("Ingrese la opcion deseada: "))
+            piedra1 =piedra1 - 1
+            pres.append(piedra[piedra1])
+            presupiedra = cantidad_producto3 * piedra[piedra1]
 
