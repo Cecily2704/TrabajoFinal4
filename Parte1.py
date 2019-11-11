@@ -1,21 +1,27 @@
 import os
 os.system("cls")
 
-I = ["Quisqueya = s/ 21.50","Sol = s/ 22.20","Pacasmayo = s/ 24.00"]
+I1 = [21.50, 22.20, 24.00]
+II1 = 24.00
+V1 = 31.90
+IP1 = [20.00, 20.60, 23.20]
+HS1 = [22.80, 24.20]
+GU1 = [20.50, 23.10]
+I = ["Opción 1: Quisqueya = s/ 21.50","Opción 2: Sol = s/ 22.20","Opción 3: Pacasmayo = s/ 24.00"]
 II = ["Andino = s/ 24.00"]
 V = ["Pacasmayo = s/ 31.90"]
-IP = ["Quisqueya = s/ 20.00", "Yura = s/ 20.60", "Andino = s/ 23.20"]
-HS = ["Inka = s/ 22.80", "Andino = s/ 24.20"]
-GU = ["APU = s/ 20.50", "Pacasmayo = s/ 23.10"]
+IP = ["Opción 1: Quisqueya = s/ 20.00", "Opción 2: Yura = s/ 20.60", "Opción 3: Andino = s/ 23.20"]
+HS = ["Opción 1: Inka = s/ 22.80", "Opción 2: Andino = s/ 24.20"]
+GU = ["Opción 1: APU = s/ 20.50", "Opción 2: Pacasmayo = s/ 23.10"]
 Cportland = [[I], [II], [V], [IP], [HS], [GU]]
 tiposc = ["Cemento Portland tipo I: 1","Cemento Portland tipo II: 2","Cemento Portland tipo V: 3",
         "Cemento Portland tipo IP: 4","Cemento Portland tipo HS: 5","Cemento Portland tipo GU: 6"]
 
 arena_fina_A = [0.16, 1.43]
-arena_fina = ["arena (Unicon) = s/ 0.16xkg", "arena Hades = s/ 1.43xkg"]
+arena_fina = ["Opción 1: Arena (Unicon) = s/ 0.16xkg", "Opción 2: Arena Hades = s/ 1.43xkg"]
 
 piedra1 = 0.15
-piedra =["piedra chancada = s/ 0.15 solesxkg"]
+piedra =["Piedra chancada = s/ 0.15xkg"]
 
 barra_corrugada_1_2_A = [27.70, 27.00]
 barra_corrugada_3_8_B = [15.50, 15.50]
@@ -26,7 +32,8 @@ barra_corrugada_8mm = ["Aceros Arequipa = s/ 11.20", "SiderPeru = s/ 11.20"]
 acero = [[barra_corrugada_1_2], [barra_corrugada_3_8],[barra_corrugada_8mm]]
 tiposac = ["Barra corrugada 1/2 (0.994 kg/m): 1", "Barra corrugada 3/8 (0.560 kg/m): 2", "Barra Corrugada 8mm (0.395 kg/m): 3"]
 
-madera = ["Maestro_2x3x16 = s/ 46.90", "Sodimac_2x4x16 = s/ 57.90"]
+madera1 =[46.90, 57.90]
+madera = ["Opción 1: Maestro_2x3x16 = s/ 46.90", "Opción 2: Sodimac_2x4x16 = s/ 57.90"]
 
 listaP = [[Cportland], [arena_fina], [piedra], [acero], [madera]]
 productos = ["Cemento: 1", "Arena: 2", "Piedra: 3", "Acero: 4","Madera: 5"]
@@ -48,6 +55,7 @@ for i in range(cantidad):
 #Proceso
     #Opción cemento
     if listaP[pos] == listaP[0]:
+        cantidad_producto1 = int(input("Ingrese la cantidad de bolsas de cemento deseadas para el producto " + num + ":"))
         for tip in tiposc:
             print("Opción",tip)
         c =  int(input("Ingrese la opción de cemento que desea:"))
@@ -55,47 +63,59 @@ for i in range(cantidad):
         if Cportland[pos1] == Cportland[0]:
             for cem in I:
                 print(cem)
-            ce = int(input("Escoja la opción que desea si Quisqueya: 1 Sol: 2 Pacasmayo: 3 :"))
+            ce = int(input("Escoja la opción que desea:"))
             ce1 = ce - 1
             pres.append(I[ce1])
+            presuce = cantidad_producto1*I1[ce1]
+            print("El presupuesto de cemento sería",presuce, "soles")
         elif Cportland[pos1] == Cportland[1]:
             for cem in II:
                 print(cem)
-            pres.append(II[0])   
+            pres.append(II[0])
+            presuce = cantidad_producto1*II1
+            print("El presupuesto de cemento sería",presuce, "soles")   
         elif Cportland[pos1] == Cportland[2]:
             for cem in V:
                 print(cem)
             pres.append(V[0])
+            presuce = cantidad_producto1*V1
+            print("El presupuesto de cemento sería", presuce, "soles") 
         elif Cportland[pos1] == Cportland[3]:
             for cem in IP:
                 print(cem)
-            cem = int(input("Escoja la opción que desea si opción Quisqueya: 1, opción Yura: 2 u opción Andino: 3 :"))
+            cem = int(input("Escoja la opción que desea:"))
             cem1 = cem - 1
             pres.append(IP[cem1])
+            presuce = cantidad_producto1*IP1[cem1]
+            print("El presupuesto de cemento sería", presuce, "soles") 
         elif Cportland[pos1] == Cportland[4]:
             for cem in HS:
                 print(cem)
-            ceme = int(input("Escoja la opción que desea si opción Inka: 1 u opción Andino: 2 :"))
+            ceme = int(input("Escoja la opción que desea:"))
             ceme1 = ceme - 1
             pres.append(HS[ceme1])
+            presuce = cantidad_producto1*HS1[ceme1]
+            print("El presupuesto de cemento sería", presuce, "soles") 
         else:
             for cem in GU:
                 print(cem)
-            ce_me = int(input("Escoja la opción que desea si opción APU: 1 u opción Pacasmayo: 2 :"))
+            ce_me = int(input("Escoja la opción que desea:"))
             ce_me1 = ce_me - 1
             pres.append(GU[ce_me1])
+            presuce = cantidad_producto1*GU1[ce_me1]
+            print("El presupuesto de cemento sería", presuce, "soles") 
 
 
     # Opcion arena fina:
     if listaP[pos] == listaP[1]:
         cantidad_producto2 = int(input("Inrgese la cantidad de kg que necesita: "))
         for arena in arena_fina:
-           print(arena)
-           arefin = int(input("ingrese la opcion deseada: ")) 
-           arefin1 = arefin - 1
-           pres.append(arena_fina[arefin1])
-           presuare = cantidad_producto2 * arena_fina_A[arefin1]
-           print(presuare)
+            print(arena)
+        arefin = int(input("ingrese la opcion deseada: ")) 
+        arefin1 = arefin - 1
+        pres.append(arena_fina[arefin1])
+        presuare = cantidad_producto2 * arena_fina_A[arefin1]
+        print(presuare)
        
     
     # Opcion piedra
@@ -103,9 +123,9 @@ for i in range(cantidad):
         cantidad_producto3 = int(input("Ingrese la cantidad de kg que necesita: "))
         for piedras in piedra:
             print(piedras)
-            pres.append(piedra[0])
-            presupiedra = cantidad_producto3 * piedra1
-            print (presupiedra)
+        pres.append(piedra[0])
+        presupiedra = cantidad_producto3 * piedra1
+        print (presupiedra)
 
     
     #Opcion acero
@@ -140,4 +160,15 @@ for i in range(cantidad):
             presu_acer = cantidad_producto4*barra_corrugada_8mm_C[ace_ro1]
             print (presu_acer)
 
+
+    #Opción madera
+    if listaP[pos] == listaP[4]:
+        cantidad_producto5: int(input(""))
+        for viga in madera:
+            print(viga)
+        ma = int(input("Escoja la opción que desea:"))
+        ma1 = ma - 1
+        pres.append(madera[ma1])
+        presuma = cantidad_producto5*madera[ma1]
+        print("El presupuesto de madera seria", presuma, "soles")
 
