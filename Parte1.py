@@ -26,9 +26,9 @@ piedra =["Piedra chancada = s/ 0.15xkg"]
 barra_corrugada_1_2_A = [27.70, 27.00]
 barra_corrugada_3_8_B = [15.50, 15.50]
 barra_corrugada_8mm_C = [11.20, 11.20]
-barra_corrugada_1_2 = ["Aceros Arequipa = s/ 27.70", "SiderPeru = s/ 27.00"]
-barra_corrugada_3_8 = ["Aceros Arequipa = s/ 15.50", "SiderPeru = s/ 15.50"]
-barra_corrugada_8mm = ["Aceros Arequipa = s/ 11.20", "SiderPeru = s/ 11.20"]
+barra_corrugada_1_2 = ["Opción 1: Aceros Arequipa = s/ 27.70", "Opción 2: SiderPeru = s/ 27.00"]
+barra_corrugada_3_8 = ["Opción 1: Aceros Arequipa = s/ 15.50", "Opción 2: SiderPeru = s/ 15.50"]
+barra_corrugada_8mm = ["Opción 1: Aceros Arequipa = s/ 11.20", "Opción 2: SiderPeru = s/ 11.20"]
 acero = [[barra_corrugada_1_2], [barra_corrugada_3_8],[barra_corrugada_8mm]]
 tiposac = ["Barra corrugada 1/2 (0.994 kg/m): 1", "Barra corrugada 3/8 (0.560 kg/m): 2", "Barra Corrugada 8mm (0.395 kg/m): 3"]
 
@@ -142,7 +142,7 @@ for i in range(cantidad):
             acer1 = acer - 1
             pres.append(barra_corrugada_1_2[acer1])
             presu_acer = cantidad_producto4*barra_corrugada_1_2_A[acer1]
-            print (presu_acer)
+            print ("El presupuesto de acero sería", presu_acer, "soles")
         elif acero[pos4] == acero [1]:
             for ace in barra_corrugada_3_8:
                 print (ace)
@@ -150,7 +150,7 @@ for i in range(cantidad):
             ac_er1 = ac_er - 1
             pres.append(barra_corrugada_8mm[ac_er1])
             presu_acer = cantidad_producto4*barra_corrugada_3_8_B[ac_er1]
-            print (presu_acer)
+            print ("El presupuesto de acero sería", presu_acer, "soles")
         else:
             for ace in barra_corrugada_8mm:
                 print (ace)
@@ -158,7 +158,7 @@ for i in range(cantidad):
             ace_ro1 = ace_ro - 1
             pres.append(barra_corrugada_8mm[ace_ro1])
             presu_acer = cantidad_producto4*barra_corrugada_8mm_C[ace_ro1]
-            print (presu_acer)
+            print ("El presupuesto de acero sería", presu_acer, "soles")
 
 
     #Opción madera
@@ -170,5 +170,5 @@ for i in range(cantidad):
         ma1 = ma - 1
         pres.append(madera[ma1])
         presuma = cantidad_producto5*madera[ma1]
-        print("El presupuesto de madera seria", presuma, "soles")
+        print("El presupuesto de madera sería", presuma, "soles")
 
