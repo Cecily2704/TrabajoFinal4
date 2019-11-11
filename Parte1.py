@@ -28,13 +28,17 @@ arena_fina = ["Opción 1: Arena (Unicon) = s/ 0.16xkg", "Opción 2: Arena Hades 
 piedra1 = 0.15
 piedra =["Piedra chancada = s/ 0.15xkg"]
 
-barra_corrugada_1_2_A = [27.70, 27.00]
-barra_corrugada_3_8_B = [15.50, 15.50]
-barra_corrugada_8mm_C = [11.20, 11.20]
+#Se colocó el precio de las marcas de cada tipo de acero (en barras de 9m).
+barra_corrugada_1_2_A = [27.70, 27.00] #Precios barra de acero corrugado de 1/2
+barra_corrugada_3_8_B = [15.50, 15.50] #Precios barra de acero corrugado de 3/8
+barra_corrugada_8mm_C = [11.20, 11.20] #Precios barra de acero corrugado de 8mm
+#Se colocó los dos tipos de marcas y sus precios para que el usuario elija la conveniente. 
 barra_corrugada_1_2 = ["Opción 1: Aceros Arequipa = s/ 27.70", "Opción 2: SiderPeru = s/ 27.00"]
 barra_corrugada_3_8 = ["Opción 1: Aceros Arequipa = s/ 15.50", "Opción 2: SiderPeru = s/ 15.50"]
 barra_corrugada_8mm = ["Opción 1: Aceros Arequipa = s/ 11.20", "Opción 2: SiderPeru = s/ 11.20"]
+#Se colocó en un arreglo los tipos de acero para organizarlos. Cada tipo también es un arreglo. 
 acero = [[barra_corrugada_1_2], [barra_corrugada_3_8],[barra_corrugada_8mm]]
+#Se colocó las opciones respectivas para cada tipo de acero, así el usuario podrá escoger.  
 tiposac = ["Barra corrugada 1/2 (0.994 kg/m): 1", "Barra corrugada 3/8 (0.560 kg/m): 2", "Barra Corrugada 8mm (0.395 kg/m): 3"]
 
 #Se colocó el precio de la madera por empresa, para realizar el presupuesto parcial de la madera.
@@ -119,10 +123,10 @@ for i in range(cantidad):
 
     # Opcion arena fina:
     if listaP[pos] == listaP[1]:
-        cantidad_producto2 = int(input("Inrgese la cantidad de kg que necesita: "))
+        cantidad_producto2 = int(input("Ingrese la cantidad de kg que necesita: "))
         for arena in arena_fina:
             print(arena)
-        arefin = int(input("ingrese la opcion deseada: ")) 
+        arefin = int(input("Ingrese la opcion deseada: ")) 
         arefin1 = arefin - 1
         pres.append(arena_fina[arefin1])
         presuare = cantidad_producto2 * arena_fina_A[arefin1]
@@ -143,7 +147,7 @@ for i in range(cantidad):
         presupiedra = 0
 
     
-    #Opcion acero
+    #Opcion acero, se hizo un presupuesto para cada tipo de acero según lo escogido por el usuario.
     if listaP[pos] == listaP[3]:
         cantidad_producto4 = int(input("Ingrese la cantidad de barras de 9m de acero deseadas para el producto " + num + ": "))
         for tip in tiposac:
@@ -177,7 +181,7 @@ for i in range(cantidad):
     else:
         presu_acer = 0
 
-    #Opción madera, se hizo un presupuesto parcial para cada elección de madera
+    #Opción madera, se hizo un presupuesto parcial para cada elección de madera.
     if listaP[pos] == listaP[4]:
         cantidad_producto5 = int(input("Ingrese la cantidad de tablas de 16ft: "))
         for viga in madera:
@@ -189,8 +193,10 @@ for i in range(cantidad):
         print("El presupuesto de madera sería", presuma, "soles.")
     else:
         presuma = 0
+
 # Salida
 presupuesto_final = 0
 presupuesto_final = presuce + presu_acer + presuare + presupiedra + presuma
 print("Usted escogió estas opciones ", pres)
+#Se puso round para redondear el presupuesto final a dos decimales
 print("El presupuesto final sería ", round(presupuesto_final,2), "soles.")
