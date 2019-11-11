@@ -122,7 +122,7 @@ for i in range(cantidad):
 
 
     # Opcion arena fina:
-    if listaP[pos] == listaP[1]:
+    if listaP[pos] == listaP[1]:  ##En caso de que el cliente escoja arena fina, puede visualizar esta opcion
         cantidad_producto2 = int(input("Ingrese la cantidad de kg que necesita: "))
         for arena in arena_fina:
             print(arena)
@@ -136,7 +136,7 @@ for i in range(cantidad):
        
     
     # Opcion piedra
-    if listaP[pos] == listaP[2]:
+    if listaP[pos] == listaP[2]:  ##En caso de que el cliente escoja piedra chancada, puede visualizar esta opcion
         cantidad_producto3 = int(input("Ingrese la cantidad de kg que necesita: "))
         for piedras in piedra:
             print(piedras)
