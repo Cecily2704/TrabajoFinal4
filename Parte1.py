@@ -1,19 +1,24 @@
 import os
 os.system("cls")
 
-I1 = [21.50, 22.20, 24.00]
-II1 = 24.00
-V1 = 31.90
-IP1 = [20.00, 20.60, 23.20]
+#Se colocó el precio de las marcas de cada tipo de cemento, para realizar el presupuesto parcial de cemento.
+I1 = [21.50, 22.20, 24.00] 
+II1 = 24.00  
+V1 = 31.90  
+IP1 = [20.00, 20.60, 23.20] 
 HS1 = [22.80, 24.20]
 GU1 = [20.50, 23.10]
+#Se colocó las diferentes marcas de cada tipo de cemento con su precio por una bolsa de 42.5kg, 
+# para que el usuario pueda elegir la más conveniente.
 I = ["Opción 1: Quisqueya = s/ 21.50","Opción 2: Sol = s/ 22.20","Opción 3: Pacasmayo = s/ 24.00"]
 II = ["Andino = s/ 24.00"]
 V = ["Pacasmayo = s/ 31.90"]
 IP = ["Opción 1: Quisqueya = s/ 20.00", "Opción 2: Yura = s/ 20.60", "Opción 3: Andino = s/ 23.20"]
 HS = ["Opción 1: Inka = s/ 22.80", "Opción 2: Andino = s/ 24.20"]
 GU = ["Opción 1: APU = s/ 20.50", "Opción 2: Pacasmayo = s/ 23.10"]
+#Se colocó este arreglo para organizar los tipos de cemento
 Cportland = [[I], [II], [V], [IP], [HS], [GU]]
+#Se colocó los tipos de cemento con un número respectivo,  para que el usuario pueda elegir la opción que desea.
 tiposc = ["Cemento Portland tipo I: 1","Cemento Portland tipo II: 2","Cemento Portland tipo V: 3",
         "Cemento Portland tipo IP: 4","Cemento Portland tipo HS: 5","Cemento Portland tipo GU: 6"]
 
@@ -32,10 +37,14 @@ barra_corrugada_8mm = ["Opción 1: Aceros Arequipa = s/ 11.20", "Opción 2: Side
 acero = [[barra_corrugada_1_2], [barra_corrugada_3_8],[barra_corrugada_8mm]]
 tiposac = ["Barra corrugada 1/2 (0.994 kg/m): 1", "Barra corrugada 3/8 (0.560 kg/m): 2", "Barra Corrugada 8mm (0.395 kg/m): 3"]
 
+#Se colocó el precio de la madera por empresa, para realizar el presupuesto parcial de la madera.
 madera1 =[46.90, 57.90]
+#Se colocó las diferentes empresas que vendene madera con su precio por 16ft, para que el usuario pueda elegir la más conveniente.
 madera = ["Opción 1: Maestro_2x3x16 = s/ 46.90", "Opción 2: Sodimac_2x4x16 = s/ 57.90"]
 
+#Se colocó este arreglo para organizar las opciones de productos
 listaP = [[Cportland], [arena_fina], [piedra], [acero], [madera]]
+#Se colocó los productos con un número respectivo,  para que el usuario pueda elegir la opción que desea.
 productos = ["Cemento: 1", "Arena: 2", "Piedra: 3", "Acero: 4","Madera: 5"]
 
 #Entrada
@@ -53,7 +62,7 @@ for i in range(cantidad):
     pos = nombre - 1 
 
 #Proceso
-    #Opción cemento
+    #Opción cemento, se hizo un presupuesto parcial para cada tipo de cemento
     if listaP[pos] == listaP[0]:
         cantidad_producto1 = int(input("Ingrese la cantidad de bolsas de cemento deseadas para el producto " + num + ": "))
         for tip in tiposc:
@@ -168,7 +177,7 @@ for i in range(cantidad):
     else:
         presu_acer = 0
 
-    #Opción madera
+    #Opción madera, se hizo un presupuesto parcial para cada elección de madera
     if listaP[pos] == listaP[4]:
         cantidad_producto5 = int(input("Ingrese la cantidad de tablas de 16ft: "))
         for viga in madera:
