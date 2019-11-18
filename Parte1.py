@@ -1,24 +1,19 @@
 import os
 os.system("cls")
 
-#Se colocó el precio de las marcas de cada tipo de cemento, para realizar el presupuesto parcial de cemento.
-I1 = [21.50, 22.20, 24.00] 
-II1 = 24.00  
-V1 = 31.90  
-IP1 = [20.00, 20.60, 23.20] 
+I1 = [21.50, 22.20, 24.00]
+II1 = 24.00
+V1 = 31.90
+IP1 = [20.00, 20.60, 23.20]
 HS1 = [22.80, 24.20]
 GU1 = [20.50, 23.10]
-#Se colocó las diferentes marcas de cada tipo de cemento con su precio por una bolsa de 42.5kg, 
-# para que el usuario pueda elegir la más conveniente.
 I = ["Opción 1: Quisqueya = s/ 21.50","Opción 2: Sol = s/ 22.20","Opción 3: Pacasmayo = s/ 24.00"]
 II = ["Andino = s/ 24.00"]
 V = ["Pacasmayo = s/ 31.90"]
 IP = ["Opción 1: Quisqueya = s/ 20.00", "Opción 2: Yura = s/ 20.60", "Opción 3: Andino = s/ 23.20"]
 HS = ["Opción 1: Inka = s/ 22.80", "Opción 2: Andino = s/ 24.20"]
 GU = ["Opción 1: APU = s/ 20.50", "Opción 2: Pacasmayo = s/ 23.10"]
-#Se colocó este arreglo para organizar los tipos de cemento
 Cportland = [[I], [II], [V], [IP], [HS], [GU]]
-#Se colocó los tipos de cemento con un número respectivo,  para que el usuario pueda elegir la opción que desea.
 tiposc = ["Cemento Portland tipo I: 1","Cemento Portland tipo II: 2","Cemento Portland tipo V: 3",
         "Cemento Portland tipo IP: 4","Cemento Portland tipo HS: 5","Cemento Portland tipo GU: 6"]
 
@@ -41,16 +36,16 @@ acero = [[barra_corrugada_1_2], [barra_corrugada_3_8],[barra_corrugada_8mm]]
 #Se colocó las opciones respectivas para cada tipo de acero, así el usuario podrá escoger.  
 tiposac = ["Barra corrugada 1/2 (0.994 kg/m): 1", "Barra corrugada 3/8 (0.560 kg/m): 2", "Barra Corrugada 8mm (0.395 kg/m): 3"]
 
-#Se colocó el precio de la madera por empresa, para realizar el presupuesto parcial de la madera.
 madera1 =[46.90, 57.90]
-#Se colocó las diferentes empresas que vendene madera con su precio por 16ft, para que el usuario pueda elegir la más conveniente.
 madera = ["Opción 1: Maestro_2x3x16 = s/ 46.90", "Opción 2: Sodimac_2x4x16 = s/ 57.90"]
 
-#Se colocó este arreglo para organizar las opciones de productos
 listaP = [[Cportland], [arena_fina], [piedra], [acero], [madera]]
-#Se colocó los productos con un número respectivo,  para que el usuario pueda elegir la opción que desea.
 productos = ["Cemento: 1", "Arena: 2", "Piedra: 3", "Acero: 4","Madera: 5"]
-
+presuce = 0
+presuare = 0
+presupiedra = 0
+presu_acer = 0
+presuma = 0
 #Entrada
 pres = []
 while True:
@@ -66,7 +61,9 @@ for i in range(cantidad):
     pos = nombre - 1 
 
 #Proceso
-    #Opción cemento, se hizo un presupuesto parcial para cada tipo de cemento
+    
+
+    #Opción cemento
     if listaP[pos] == listaP[0]:
         cantidad_producto1 = int(input("Ingrese la cantidad de bolsas de cemento deseadas para el producto " + num + ": "))
         for tip in tiposc:
@@ -117,38 +114,35 @@ for i in range(cantidad):
             pres.append(GU[ce_me1])
             presuce = cantidad_producto1*GU1[ce_me1]
             print("El presupuesto de cemento sería ", presuce, "soles.") 
-    else:
-        presuce = 0
+    
 
 
     # Opcion arena fina:
-    if listaP[pos] == listaP[1]:  ##En caso de que el cliente escoja arena fina, puede visualizar esta opcion
-        cantidad_producto2 = int(input("Ingrese la cantidad de kg que necesita: "))
+    elif listaP[pos] == listaP[1]:
+        cantidad_producto2 = int(input("Inrgese la cantidad de kg que necesita: "))
         for arena in arena_fina:
             print(arena)
-        arefin = int(input("Ingrese la opcion deseada: ")) 
+        arefin = int(input("ingrese la opcion deseada: ")) 
         arefin1 = arefin - 1
         pres.append(arena_fina[arefin1])
         presuare = cantidad_producto2 * arena_fina_A[arefin1]
         print("El presupuesto de la arena fina sería ", presuare, "soles.")
-    else:
-        presuare = 0
+    
        
     
     # Opcion piedra
-    if listaP[pos] == listaP[2]:  ##En caso de que el cliente escoja piedra chancada, puede visualizar esta opcion
+    elif listaP[pos] == listaP[2]:
         cantidad_producto3 = int(input("Ingrese la cantidad de kg que necesita: "))
         for piedras in piedra:
             print(piedras)
         pres.append(piedra[0])
         presupiedra = cantidad_producto3 * piedra1
         print("El presupuesto de la piedra chancada sería ", presupiedra, "soles.")
-    else:
-        presupiedra = 0
+    
 
     
-    #Opcion acero, se hizo un presupuesto para cada tipo de acero según lo escogido por el usuario.
-    if listaP[pos] == listaP[3]:
+    #Opcion acero, se hizo un presupuesto para cada tipo de acero según lo escogido por el usuario
+    elif listaP[pos] == listaP[3]:
         cantidad_producto4 = int(input("Ingrese la cantidad de barras de 9m de acero deseadas para el producto " + num + ": "))
         for tip in tiposac:
             print ("Opción", tip)       
@@ -178,11 +172,10 @@ for i in range(cantidad):
             pres.append(barra_corrugada_8mm[ace_ro1])
             presu_acer = cantidad_producto4*barra_corrugada_8mm_C[ace_ro1]
             print ("El presupuesto de acero sería", presu_acer, "soles.")
-    else:
-        presu_acer = 0
+    
 
-    #Opción madera, se hizo un presupuesto parcial para cada elección de madera.
-    if listaP[pos] == listaP[4]:
+    #Opción madera
+    else:
         cantidad_producto5 = int(input("Ingrese la cantidad de tablas de 16ft: "))
         for viga in madera:
             print(viga)
@@ -191,12 +184,10 @@ for i in range(cantidad):
         pres.append(madera[ma1])
         presuma = cantidad_producto5 * madera1[ma1]
         print("El presupuesto de madera sería", presuma, "soles.")
-    else:
-        presuma = 0
+    
 
-# Salida
+#Salida
 presupuesto_final = 0
 presupuesto_final = presuce + presu_acer + presuare + presupiedra + presuma
 print("Usted escogió estas opciones ", pres)
-#Se puso round para redondear el presupuesto final a dos decimales
 print("El presupuesto final sería ", round(presupuesto_final,2), "soles.")
